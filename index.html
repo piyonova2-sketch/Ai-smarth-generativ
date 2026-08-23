@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smarth Generativ</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- MODAL AUTH (LOGIN & REGISTER) -->
+    <div id="auth-modal" class="auth-overlay">
+        <div class="auth-card">
+            <h2>AI SMARTH GENERATIV</h2>
+            <p id="ai-mood-status" class="subtitle">Silakan masuk atau daftar dulu, bro!</p>
+
+            <!-- Form Login -->
+            <form id="login-form" class="auth-form">
+                <h3>Login Akun</h3>
+                <input type="email" placeholder="Email lu" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-main">Masuk</button>
+                <p class="switch-text">Belum punya akun? <span id="to-register">Daftar di sini</span></p>
+            </form>
+
+            <!-- Form Register -->
+            <form id="register-form" class="auth-form hidden">
+                <h3>Daftar Akun Baru</h3>
+                <input type="email" placeholder="Email baru lu" required>
+                <input type="password" placeholder="Password baru" required>
+                <button type="submit" class="btn-main">Kirim Kode Verifikasi</button>
+                <p class="switch-text">Udah punya akun? <span id="to-login">Login</span></p>
+            </form>
+
+            <!-- Form Verifikasi Kode -->
+            <form id="verify-form" class="auth-form hidden">
+                <h3>Verifikasi Gmail</h3>
+                <p class="info-text">Masukkan kode acak yang dikirim ke simulasi Gmail.</p>
+                <input type="text" id="verification-code" placeholder="6 Digit Kode" required>
+                <button type="submit" class="btn-main">Verifikasi & Masuk</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONTAINER UTAMA APLIKASI CHAT -->
+    <div id="app-container" class="app-container hidden">
+        <header class="app-header">
+            <div class="header-title">
+                <i class="fa-solid fa-globe"></i>
+                <span>AI SMARTH GENERATIV</span>
+            </div>
+            <div id="ai-mood-status" class="header-status">AI Mood: Aktif & Nyambung 🔥</div>
+        </header>
+
+        <!-- Jendela Chat -->
+        <div id="chat-window" class="chat-window">
+            <div class="message ai-message">
+                <div class="bubble">
+                    Halo bro/sist! Gua AI Smarth Generativ. Lu mau curhat, tanya-tanya, atau ngirim gambar, gua siap nemenin lu! 😎
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Gambar yang Dipilih -->
+        <div id="preview-container" class="preview-container hidden">
+            <img id="image-preview" src="" alt="Preview">
+            <button id="remove-image"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Area Input Chat -->
+        <div class="chat-input-area">
+            <label for="file-input" class="icon-btn"><i class="fa-solid fa-image"></i></label>
+            <input type="file" id="file-input" accept="image/*" class="hidden">
+            
+            <button id="mic-btn" class="icon-btn"><i class="fa-solid fa-microphone"></i></button>
+            
+            <input type="text" id="user-input" placeholder="Ketik pesan atau curhat di sini...">
+            
+            <button id="send-btn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
